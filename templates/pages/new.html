@@ -10,10 +10,10 @@
 
     <title>Donor</title>
   </head>
-  <body>
+  <body class="container">
     {% if messages %}
       {% for message in messages %}
-        <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+        <div class="mt-4 alert {{ message.tags }} alert-dismissible" role="alert">
           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -21,7 +21,7 @@
         </div>
       {% endfor %}
     {% endif %}
-    <h1>Donor Registration</h1>
+    <h1 class="mt-4">Donor Registration</h1>
     <div class="container">
     <form action="{%url 'verification' %}" method="POST">
     {% csrf_token %} 

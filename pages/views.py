@@ -69,7 +69,7 @@ def verification(request):
         print('Variable verification of otp_1', otp_1)
 
         if (otp_1 == x):        
-            messages.success(request, 'Your OTP has been verified')
+            messages.success(request, 'Your OTP has been verified and you are registered Succesfully!')
 
             mn = Contact1.objects.latest('mobile_number').mobile_number
             print(mn)
