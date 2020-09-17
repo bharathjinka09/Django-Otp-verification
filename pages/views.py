@@ -29,7 +29,10 @@ def contact(request):
         date_day = request.POST['date_day']
         Sample_text = request.POST['Sample_text']
         gender = request.POST['gender']
+        
+        x = random_with_N_digits(6)
 
+        global otp
         otp = x
         print(otp)
 
@@ -68,7 +71,7 @@ def verification(request):
         print('This is the value of x :',x)     
         print('Variable verification of otp_1', otp_1)
 
-        if (otp_1 == x):        
+        if (otp_1 == otp):        
             messages.success(request, 'Your OTP has been verified and you are registered Succesfully!')
 
             mn = Contact1.objects.latest('mobile_number').mobile_number
